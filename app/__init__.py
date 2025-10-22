@@ -27,8 +27,12 @@ def create_app():
 def configure_routes(app):
     """Configura las rutas de la aplicación"""
     from .controllers.health_controller import HealthCheckView
+    from .controllers.product_processor_controller import product_processor_bp
     
     api = Api(app)
     
     # Health check endpoint
     api.add_resource(HealthCheckView, '/inventory-procesor/ping')
+    
+    # Product processor endpoint
+    app.register_blueprint(product_processor_bp)
