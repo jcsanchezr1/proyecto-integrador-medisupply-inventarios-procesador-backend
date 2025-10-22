@@ -1,0 +1,23 @@
+version: '3.9'
+
+services:
+  inventarios-procesador:
+    image: inventarios-procesador
+    container_name: inventarios-procesador
+    build:
+      context: ./
+    dns:
+      - 8.8.8.8
+    networks:
+      - inventarios-procesador_net
+      - app_net
+    ports:
+      - "8080:8080"
+
+networks:
+  app_net:
+    name: app_net
+    driver: bridge
+  inventarios-procesador_net:
+    name: inventarios-procesador_net
+    driver: bridge
