@@ -20,6 +20,7 @@ env:
   BUCKET_FOLDER: ${{ vars.BUCKET_FOLDER }}
   BUCKET_LOCATION: ${{ vars.BUCKET_LOCATION }}
   SIGNING_SERVICE_ACCOUNT_EMAIL: ${{ vars.SIGNING_SERVICE_ACCOUNT_EMAIL }}
+  BUCKET_FOLDER_PROCESSED_PRODUCTS: ${{ vars.BUCKET_FOLDER_PROCESSED_PRODUCTS }}
 
   # Configuración de la imagen
   IMAGE_TAG: ${{ github.sha }}
@@ -81,7 +82,7 @@ jobs:
             --region ${{ env.GCP_REGION }} \
             --platform managed \
             --service-account ${{ env.SIGNING_SERVICE_ACCOUNT_EMAIL }} \
-            --set-env-vars HOST="0.0.0.0",DEBUG="false",DATABASE_URL="${{ env.DATABASE_URL }}",GCP_PROJECT_ID="${{ env.GCP_PROJECT_ID }}",BUCKET_NAME="${{ env.BUCKET_NAME }}",BUCKET_FOLDER="${{ env.BUCKET_FOLDER }}",BUCKET_LOCATION="${{ env.BUCKET_LOCATION }}",SIGNING_SERVICE_ACCOUNT_EMAIL="${{ env.SIGNING_SERVICE_ACCOUNT_EMAIL }}" \
+            --set-env-vars HOST="0.0.0.0",DEBUG="false",DATABASE_URL="${{ env.DATABASE_URL }}",GCP_PROJECT_ID="${{ env.GCP_PROJECT_ID }}",BUCKET_NAME="${{ env.BUCKET_NAME }}",BUCKET_FOLDER="${{ env.BUCKET_FOLDER }}",BUCKET_LOCATION="${{ env.BUCKET_LOCATION }}",SIGNING_SERVICE_ACCOUNT_EMAIL="${{ env.SIGNING_SERVICE_ACCOUNT_EMAIL }}",BUCKET_FOLDER_PROCESSED_PRODUCTS="${{ env.BUCKET_FOLDER_PROCESSED_PRODUCTS }}" \
             --memory 2Gi \
             --cpu 2 \
             --min-instances 1 \
