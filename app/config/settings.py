@@ -24,7 +24,7 @@ class Config:
     # Configuración de Google Cloud Storage
     BUCKET_NAME = os.getenv('BUCKET_NAME', 'medisupply-bucket')
     BUCKET_FOLDER = os.getenv('BUCKET_FOLDER', 'products')
-    BUCKET_FOLDER_PROCESSED_PRODUCTS = os.getenv('BUCKET_FOLDER_PROCESSED_PRODUCTS', 'processed_products')
+    BUCKET_FOLDER_PROCESSED_PRODUCTS = os.getenv('BUCKET_FOLDER_PROCESSED_PRODUCTS', 'processed-products')
     SIGNING_SERVICE_ACCOUNT_EMAIL = os.getenv('SIGNING_SERVICE_ACCOUNT_EMAIL', '')
     MAX_CONTENT_LENGTH = int(os.getenv('MAX_CONTENT_LENGTH', 2 * 1024 * 1024))  # 2MB
     
