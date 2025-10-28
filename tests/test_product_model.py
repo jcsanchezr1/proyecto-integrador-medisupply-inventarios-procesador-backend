@@ -158,7 +158,7 @@ class TestProductModel(unittest.TestCase):
     
     def test_validate_product_type_valid_options(self):
         """Prueba tipos de producto válidos"""
-        valid_types = ["Alto valor", "Seguridad", "Cadena fría"]
+        valid_types = ["Alto valor", "Seguridad", "Cadena de frío"]
         
         for product_type in valid_types:
             data = self.valid_product_data.copy()
