@@ -29,7 +29,7 @@ class Product(BaseModel):
             price: Precio unitario en COP
             location: Ubicación en almacén (formato P-EE-NN)
             description: Descripción del producto
-            product_type: Tipo de producto (Alto valor, Seguridad, Cadena fría)
+            product_type: Tipo de producto (Alto valor, Seguridad, Cadena de frío)
             provider_id: ID del proveedor (UUID string)
             photo_filename: Nombre del archivo de foto (opcional)
             photo_url: URL de la foto (opcional)
@@ -131,13 +131,13 @@ class Product(BaseModel):
             raise ValueError("La ubicación debe seguir el formato P-EE-NN (Pasillo: A-Z, Estante: 01-99, Nivel: 01-99)")
     
     def _validate_product_type(self) -> None:
-        """Valida tipo de producto: Alto valor, Seguridad, Cadena fría"""
+        """Valida tipo de producto: Alto valor, Seguridad, Cadena de frío"""
         if not self.product_type:
             raise ValueError("El tipo de producto es obligatorio")
         
-        valid_types = ["Alto valor", "Seguridad", "Cadena fría"]
+        valid_types = ["Alto valor", "Seguridad", "Cadena de frío"]
         if self.product_type not in valid_types:
-            raise ValueError("El tipo de producto debe ser: Alto valor, Seguridad o Cadena fría")
+            raise ValueError("El tipo de producto debe ser: Alto valor, Seguridad o Cadena de frío")
     
     def _validate_provider_id(self) -> None:
         """Valida ID del proveedor: UUID string válido"""
